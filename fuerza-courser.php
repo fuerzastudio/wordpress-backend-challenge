@@ -27,7 +27,7 @@
 	if(!class_exists('FuerzaCursos')){
 		class FuerzaCursos
 		{
-			private static FuerzaCursos $instance;
+			private static $instance;
 
 			public static function getInstance(): FuerzaCursos {
 				if ( ! self::$instance ){

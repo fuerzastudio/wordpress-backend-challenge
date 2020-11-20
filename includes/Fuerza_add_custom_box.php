@@ -168,8 +168,8 @@ if(!class_exists('Fuerza_add_custom_box')){
 
 						<tr>
 							<td scope="row" class="center"> <?= $resp->id ?></td>
-							<td class="center"> <?= $resp->name ?></td>
-							<td class="center"> <?= $resp->email ?></td>
+							<td class=""> <?= $resp->name ?></td>
+							<td class=""> <?= $resp->email ?></td>
 							<td class="center"> <?= $date ?></td>
 							<td class="center"> <?= $time ?></td>
 						</tr>
