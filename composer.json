@@ -17,7 +17,8 @@
             "_Rede\\": "Fuerza_lib/"
         },
         "files": [
-            "./includes/Fuerza_add_custom_box.php"
+            "./includes/Fuerza_add_custom_box.php",
+            "./includes/validate-action.php"
         ],
         "classmap": [
             "./includes/"

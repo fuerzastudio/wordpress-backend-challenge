@@ -8,6 +8,7 @@ class ComposerStaticInit01712266640ef702fd72910c02e41343
 {
     public static $files = array (
         '1100d480bc155bd628f50e25376e65ee' => __DIR__ . '/../..' . '/includes/Fuerza_add_custom_box.php',
+        '8f0b45e9e6734bc0810b348660df8fdf' => __DIR__ . '/../..' . '/includes/validate-action.php',
     );
 
     public static $prefixLengthsPsr4 = array (
