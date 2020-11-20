@@ -16,7 +16,7 @@
 			/**
 			 * @var string
 			 */
-			protected $tableName;
+			protected string $tableName;
 			/**
 			 * @var wpdb
 			 */
@@ -42,7 +42,7 @@
 
 				$this->data = $data;
 
-
+				$this->emailExists();
 			}
 
 			/**
@@ -72,6 +72,20 @@
 
 
 					return wp_send_json_success($this->data);
+				}
+
+			}
+
+			private function emailExists()
+			{
+				$result =  $this->global->get_results( "SELECT * FROM ".$this->tableName.
+				                                       " WHERE courser_id = '".$this->id."' AND email = '" . $this->data['email']."'", OBJECT );
+
+				if($result){
+					$json['field'] = 'email';
+					$json[ 'message'] = "Este mail já existe em nossa base de dados, por favor tente com um novo email";
+
+					return wp_send_json_error($json);
 				}
 
 			}

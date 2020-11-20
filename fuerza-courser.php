@@ -155,7 +155,7 @@
 		}
 
 		FuerzaCursos::getInstance();
-
+		CourseTable::init();
 
 		register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 		register_activation_hook( __FILE__, 'FuerzaCursos::activation' );
