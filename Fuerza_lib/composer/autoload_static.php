@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit01712266640ef702fd72910c02e41343
 {
+    public static $files = array (
+        '1100d480bc155bd628f50e25376e65ee' => __DIR__ . '/../..' . '/includes/Fuerza_add_custom_box.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         '_' => 
         array (
@@ -16,12 +20,12 @@ class ComposerStaticInit01712266640ef702fd72910c02e41343
     public static $prefixDirsPsr4 = array (
         '_Rede\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Fuerza_lib',
+            0 => 'C:\\xampp\\htdocs\\Fueza\\wp-content\\plugins\\fuerza-course\\Fuerza_lib',
         ),
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Fuerza_add_custom_box' => __DIR__ . '/../..' . '/includes/Fuerza_add_custom_box.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
