@@ -1,0 +1,26 @@
+{
+    "name": "maycon-queiroz/fuerza-course",
+    "type": "library",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Maycon Queiroz",
+            "email": "fmaycon@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "vendor-dir": "Fuerza_lib"
+    },
+    "autoload": {
+        "psr-4": {
+            "_Rede\\": "Fuerza_lib/"
+        },
+        "files": [
+        ],
+        "classmap": [
+            "./includes/"
+        ]
+    },
+    "require": {}
+}
