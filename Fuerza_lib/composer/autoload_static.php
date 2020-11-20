@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit01712266640ef702fd72910c02e41343
 {
     public static $files = array (
+        '58da90224138a4c97d94814300ed7016' => __DIR__ . '/../..' . '/includes/Column.php',
         '1100d480bc155bd628f50e25376e65ee' => __DIR__ . '/../..' . '/includes/Fuerza_add_custom_box.php',
         '8f0b45e9e6734bc0810b348660df8fdf' => __DIR__ . '/../..' . '/includes/validate-action.php',
     );
@@ -26,7 +27,11 @@ class ComposerStaticInit01712266640ef702fd72910c02e41343
     );
 
     public static $classMap = array (
+        'CourseTable' => __DIR__ . '/../..' . '/includes/courser/course_db/CourseTable.php',
         'Fuerza_add_custom_box' => __DIR__ . '/../..' . '/includes/Fuerza_add_custom_box.php',
+        'InsertInterested' => __DIR__ . '/../..' . '/includes/courser/course_db/InsertInterested.php',
+        'Interesting' => __DIR__ . '/../..' . '/includes/Interesting.php',
+        'haveInterested' => __DIR__ . '/../..' . '/includes/courser/haveInterested.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

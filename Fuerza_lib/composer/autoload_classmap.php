@@ -6,5 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CourseTable' => $baseDir . '/includes/courser/course_db/CourseTable.php',
     'Fuerza_add_custom_box' => $baseDir . '/includes/Fuerza_add_custom_box.php',
+    'InsertInterested' => $baseDir . '/includes/courser/course_db/InsertInterested.php',
+    'Interesting' => $baseDir . '/includes/Interesting.php',
+    'haveInterested' => $baseDir . '/includes/courser/haveInterested.php',
 );
