@@ -3,11 +3,11 @@
 	if ( ! class_exists( 'FuerzaCursos' ) ) {
 		class FuerzaCursos {
 
-			private static $instance;
+			private static FuerzaCursos $instance;
 
 			private $course;
 
-			public static function getInstance() {
+			public static function getInstance(): FuerzaCursos {
 				if ( ! self::$instance ) {
 					self::$instance = new self;
 				}
@@ -24,7 +24,6 @@
 				new FuerzaScripts();
 
 				CourseTable::init();
-
 
 			}
 

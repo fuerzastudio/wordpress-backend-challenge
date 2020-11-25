@@ -10,15 +10,15 @@
     ],
     "minimum-stability": "stable",
     "config": {
-        "vendor-dir": "Fuerza_lib"
+        "vendor-dir": "includes/Fuerza_lib"
     },
     "autoload": {
         "psr-4": {
-            "_Rede\\": "Fuerza_lib/"
+            "Fuerza\\": "Fuerza_lib/"
         },
         "files": [
-            "./includes/Column.php",
-            "./includes/Fuerza_add_custom_box.php",
+            "includes/courser/Column.php",
+            "includes/courser/Fuerza_add_custom_box.php",
             "./includes/validate-action.php"
         ],
         "classmap": [

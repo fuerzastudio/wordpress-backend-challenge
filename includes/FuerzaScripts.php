@@ -1,18 +1,29 @@
 <?php
 
 	if ( ! class_exists( 'FuerzaScripts' ) ) {
+		/**
+		 * Class FuerzaScripts
+		 */
 		class FuerzaScripts {
 
+			/**
+			 * FuerzaScripts constructor.
+			 */
 			public function __construct() {
 
 				add_action( 'wp_enqueue_scripts', [ $this, 'add_scripts_fuerza' ] );
 
+				add_action( 'admin_enqueue_scripts', [ $this, 'add_scripts_admin' ],10,1 );
+
 			}
 
+			/**
+			 *
+			 */
 			public function add_scripts_fuerza() {
 
-				$css_folder = plugins_url(). '/fuerza-course-try/assets/css';
-				$js_folder  = plugins_url(). '/fuerza-course-try/assets/js' ;
+				$css_folder = plugins_url(). '/fuerza-course/assets/css';
+				$js_folder  = plugins_url(). '/fuerza-course/assets/js' ;
 
 				wp_enqueue_style( 'font-icons', $css_folder . '/all.min.css', "", '1.0.1' );
 				wp_enqueue_style( 'fuerza-courses', $css_folder . '/fuerza.css', "", '1.0.1' );
@@ -27,6 +38,15 @@
 
 				wp_localize_script( 'fuerza-courses', 'wp', $wpVars );
 
+			}
+
+			/**
+			 *
+			 */
+			public function add_scripts_admin(  ) {
+				$css_folder =  plugins_url() . '/fuerza-course/assets/css';
+
+				wp_enqueue_style('font-icons', $css_folder . '/report.css', "",'1.0.1');
 			}
 
 		}

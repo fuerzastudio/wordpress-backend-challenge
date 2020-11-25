@@ -1,54 +1,59 @@
 <?php
 
-	if (!defined('ABSPATH')) {
+	if ( ! defined( 'ABSPATH' ) ) {
 		exit;
 	}
 
-	function haveInterested()
-	{
-		$postData = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRIPPED);
-		$postData = array_map('strip_tags', array_map('trim', $postData));
+	if ( ! function_exists( 'haveInterested' ) ) {
+		function haveInterested():void {
+			$postData = filter_input_array( INPUT_POST, FILTER_SANITIZE_STRIPPED );
+			$postData = array_map( 'strip_tags', array_map( 'trim', $postData ) );
 
-		isEmpty($postData);
+			isEmpty( $postData );
 
-		validateEmail($postData['email']);
+			validateEmail( $postData['email'] );
 
-		$class = $postData['action'];
-		unset($postData['action']);
+			$class = $postData['action'];
+			$data = $postData;
 
-		$data = $postData;
+			unset( $postData );
 
-		$updated = (new $class($data));
+			new $class( $data );
 
-		exit;
-	}
-
-	add_action('wp_ajax_haveInterested', 'haveInterested');
-	add_action('wp_ajax_nopriv_haveInterested', 'haveInterested');
-
-
-	function validateEmail($email){
-
-		if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !is_email($email)){
-
-			$json['field'] = 'email';
-			$json[ 'message'] = "Por favor digite um email valido";
-
-			return wp_send_json_error($json);
+			exit;
 		}
+
+		add_action( 'wp_ajax_haveInterested', 'haveInterested' );
+		add_action( 'wp_ajax_nopriv_haveInterested', 'haveInterested' );
 	}
 
-	function isEmpty($data){
 
-		foreach ($data as $key => $item){
+	if ( ! function_exists( 'validateEmail' ) ) {
+		function validateEmail( $email ): void {
 
-			if(empty($item)){
+			if ( ! filter_var( $email, FILTER_VALIDATE_EMAIL ) && ! is_email( $email ) ) {
 
-				$json['field'] = $key;
-				$json[ 'message'] = "Este campo está em branco, você precisa preencher para continuar";
+				$json['field']   = 'email';
+				$json['message'] = "Por favor digite um email valido";
 
-				return wp_send_json_error($json);
+				wp_send_json_error( $json );
 			}
 		}
+	}
 
+
+	if ( ! function_exists( 'isEmpty' ) ) {
+		function isEmpty( $data ): void {
+
+			foreach ( $data as $key => $item ) {
+
+				if ( empty( $item ) ) {
+
+					$json['field']   = $key;
+					$json['message'] = "Este campo está em branco, você precisa preencher para continuar";
+
+					wp_send_json_error( $json );
+				}
+			}
+		}
 	}

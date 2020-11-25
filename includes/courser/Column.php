@@ -1,7 +1,12 @@
 <?php
 
-	if ( ! function_exists( 'fuerza_courses_list_columns_header' ) ):
+	if ( ! function_exists( 'fuerza_courses_list_columns_header' ) ) {
 
+		/**
+		 * @param $columns
+		 *
+		 * @return array
+		 */
 		function fuerza_courses_list_columns_header( $columns ): array {
 			$before = array_slice( $columns, 0, 2 );
 
@@ -20,21 +25,24 @@
 
 		add_filter( 'manage_edit-fuerza_courses_columns', 'fuerza_courses_list_columns_header' );
 
-	endif;
+	}
 
-	if ( ! function_exists( 'fuerza_courses_list_columns_data' ) ):
+	if ( ! function_exists( 'fuerza_courses_list_columns_data' ) ) {
 
+		/**
+		 * @param $column
+		 */
 		function fuerza_courses_list_columns_data( $column ) {
 			global $post;
 
-			$total = Interesting::getTotalCount($post->ID);
+			$total = Interesting::getTotalCount( $post->ID );
 
-			if($column === 'total-interested' && $total ){
+			if ( $column === 'total-interested' && $total ) {
 				?>
 
-				<div class='fuerza-buttons' style='padding: 0 40px; font-weight: bold; font-size: 14px'>
+                <div class='fuerza-buttons' style='padding: 0 40px; font-weight: bold; font-size: 14px'>
 					<?= $total ?>
-				</div>
+                </div>
 				<?php
 			}
 
@@ -42,4 +50,4 @@
 
 		add_filter( 'manage_fuerza_courses_posts_custom_column', 'fuerza_courses_list_columns_data' );
 
-	endif;
+	}

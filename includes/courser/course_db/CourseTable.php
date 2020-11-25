@@ -5,6 +5,9 @@
 	}
 
 	if(!class_exists( 'CourseTable' )){
+		/**
+		 * Class CourseTable
+		 */
 		class CourseTable
 		{
 			/**
@@ -42,6 +45,9 @@
 			}
 
 
+			/**
+			 *
+			 */
 			public static function dropTable(){
 				global $wpdb;
 
@@ -54,7 +60,6 @@
 				$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}".WC_TABLE_FUERZA );
 
 			}
-
 
 		}
 

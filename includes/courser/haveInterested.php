@@ -1,20 +1,33 @@
 <?php
 
-	if (!defined('ABSPATH')) {
+	if ( ! defined( 'ABSPATH' ) ) {
 		exit;
 	}
 
-	if ( !class_exists( 'haveInterested' ) ) {
-		class haveInterested
-		{
+	if ( ! class_exists( 'haveInterested' ) ) {
+		/**
+		 * Class haveInterested
+		 */
+		class haveInterested {
+
+			/**
+			 * @var array
+			 */
 			private array $data;
 
+			/**
+			 * @var InsertInterested
+			 */
 			private InsertInterested $save;
 
-			public function __construct(array $data)
-			{
+			/**
+			 * haveInterested constructor.
+			 *
+			 * @param array $data
+			 */
+			public function __construct( array $data ) {
 				$this->data = $data;
-				$this->save = new InsertInterested($this->data);
+				$this->save = new InsertInterested( $this->data );
 
 				$this->init();
 			}
@@ -24,8 +37,7 @@
 			 *
 			 * @return void
 			 */
-			public function init(): void
-			{
+			public function init(): void {
 				$this->save->save();
 
 			}

@@ -1,8 +1,18 @@
 <?php
 
 	if(!class_exists('Interesting')){
-		final class Interesting{
 
+		/**
+		 * Class Interesting
+		 */
+		final class Interesting
+		{
+
+			/**
+			 * @param int|null $courser_id
+			 *
+			 * @return int
+			 */
 			public static function getTotalCount(int $courser_id = null): int {
 				global $wpdb;
 

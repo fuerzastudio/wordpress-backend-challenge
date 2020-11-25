@@ -1,15 +1,24 @@
 <?php
 
 if(!class_exists( 'CourseFuerza')) {
+	/**
+	 * Class CourseFuerza
+	 */
 	final class CourseFuerza {
 
+		/**
+		 * CourseFuerza constructor.
+		 */
 		public function __construct() {
 
 			add_action( 'init', [$this,'fuerza_register_post_type'] );
 
 		}
 
-		public function fuerza_register_post_type() {
+		/**
+		 *
+		 */
+		public function fuerza_register_post_type(): void {
 
 			if ( post_type_exists( 'fuerza_courses' ) ) {
 				return;

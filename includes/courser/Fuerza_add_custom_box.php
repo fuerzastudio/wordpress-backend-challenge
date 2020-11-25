@@ -1,9 +1,14 @@
 <?php
 
 if(!class_exists('Fuerza_add_custom_box')){
+	/**
+	 * Class Fuerza_add_custom_box
+	 */
 	final class Fuerza_add_custom_box
 	{
-
+		/**
+		 *
+		 */
 		public static function add()
 		{
 			$screens = ['fuerza_courses'];
@@ -22,6 +27,9 @@ if(!class_exists('Fuerza_add_custom_box')){
 			}
 		}
 
+		/**
+		 *
+		 */
 		public static function save()
 		{
 			if (isset($_POST['post_ID']) && $_POST['post_type'] === 'fuerza_courses') {
@@ -44,6 +52,9 @@ if(!class_exists('Fuerza_add_custom_box')){
 		}
 
 
+		/**
+		 * @return string[]
+		 */
 		private static function arraySetting(): array{
 			return [
 				"_fuerza_data",
@@ -53,6 +64,9 @@ if(!class_exists('Fuerza_add_custom_box')){
 		}
 
 
+		/**
+		 * @param $post
+		 */
 		public static function htmlDateLimit($post)
 		{
 			$jsonField = json_decode(get_post_meta($post->ID, '_fuerza_settings', true), false);
@@ -111,23 +125,23 @@ if(!class_exists('Fuerza_add_custom_box')){
 				</div>
 
 				<div class="fuerza-item-url fuerza-box-item-link">
-					<label for="_fuerza_data">URI da página do formulário de inscrições</label>
+					<label for="_fuerza_link">URI da página do formulário de inscrições</label>
 					<input type="url" name="_fuerza_link" id="_fuerza_link" value="<?= $link ?? '' ?>">
 				</div>
 			</div>
 			<?php
 		}
 
+		/**
+		 * @param $post
+		 */
 		public static function findAll($post){
 			global $wpdb;
 
-			$css_folder =  plugins_url() . '/fuerza-course-try/assets/css';
-			wp_enqueue_style('font-icons', $css_folder . '/report.css', "",'1.0.1');
-
-			$response = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fuerza_courser where id = '{$post->ID}'",OBJECT );
+			$response = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fuerza_courser
+                                            where id = '{$post->ID}'",OBJECT );
 
 			if($response){
-
 				?>
 				<style>
                     #fuerza-report {
@@ -145,8 +159,13 @@ if(!class_exists('Fuerza_add_custom_box')){
                         border-top: 1px solid #333;
                         border-bottom: 1px solid #333;
                     }
-				</style>
 
+                    .fuerza-not-found{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+				</style>
 
 				<table id="fuerza-report" class="cell-border stripe" style="width:100%">
 					<thead>
@@ -167,7 +186,7 @@ if(!class_exists('Fuerza_add_custom_box')){
 						?>
 
 						<tr>
-							<td scope="row" class="center"> <?= $resp->id ?></td>
+							<td class="center"> <?= $resp->id ?></td>
 							<td class=""> <?= $resp->name ?></td>
 							<td class=""> <?= $resp->email ?></td>
 							<td class="center"> <?= $date ?></td>
@@ -197,6 +216,9 @@ if(!class_exists('Fuerza_add_custom_box')){
 
 		}
 
+		/**
+		 *
+		 */
 		public function __constructor()
 		{
 		}
