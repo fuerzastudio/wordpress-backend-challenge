@@ -124,7 +124,7 @@ if(!class_exists('Fuerza_add_custom_box')){
 			$css_folder =  plugins_url() . '/fuerza-course-try/assets/css';
 			wp_enqueue_style('font-icons', $css_folder . '/report.css', "",'1.0.1');
 
-			$response = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fuerza_courser",OBJECT );
+			$response = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fuerza_courser where id = '{$post->ID}'",OBJECT );
 
 			if($response){
 
