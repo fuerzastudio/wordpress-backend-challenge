@@ -80,6 +80,8 @@ if(!class_exists( 'CourseFuerza')) {
 
 					'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail' ],
 
+					'capability_type' => 'post',
+
 				]
 
 			);

@@ -30,7 +30,7 @@
 
 				}
 
-				return plugin_dir_path(WC_PLUGIN_FILE ) .  'templates/single-fuerza-courses.php';
+				return plugin_dir_path(__FILE__ ) .  'templates/single-fuerza-courses.php';
 
 			}
 

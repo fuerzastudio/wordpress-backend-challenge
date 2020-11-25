@@ -11,15 +11,18 @@ jQuery(function ($) {
             type: "POST",
             data: form,
             beforeSend: () => {
-
+                $('body').find('input').removeClass('d-error')
                 $('.j-text-errors').remove();
-
+                button.find('.j-fuerza-title').addClass('d-none')
+                button.find('#j-fuerza-land').removeClass('d-none')
             },
         }).then((resposta) => {
+            button.find('#j-fuerza-land').addClass('d-none')
+            button.find('.j-fuerza-title').removeClass('d-none')
 
             if (resposta) {
 
-                sendMessage(resposta, button)
+                sendMessage(resposta)
 
             } else {
 
@@ -35,9 +38,6 @@ jQuery(function ($) {
         const { field, message } = resposta.data
 
         const item = $(`input[name='${field}']`)
-        const itemMessage = $(`.j-${field}`)
-
-        console.log(item, message)
 
         if (resposta.success) {
 
@@ -55,19 +55,36 @@ jQuery(function ($) {
             }, 5000)
 
         } else {
+            item.addClass('d-error');
 
-            itemMessage.append(` <small class="text-muted j-text-errors">${message}</small>`)
+            item.val(message)
         }
 
     }
 
     function setNewClient(data) {
 
-        localStorage.setItem('fuerza-cursos:client', JSON.stringify(data))
+        const storage = {
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            course: data.course,
+            courser_id: data.courser_id,
+        }
+
+        localStorage.setItem('fuerza-cursos:client', JSON.stringify(storage));
 
         window.location.href = `${data.link}`
 
     }
+
+    const inputs = [...document.querySelectorAll('input')];
+
+    inputs.forEach(input =>{
+        input.addEventListener('focusin', ()=>{
+            input.value = '';
+        })
+    })
 
 });
 

@@ -1,13 +1,13 @@
 <?php
 
 	if ( ! class_exists( 'FuerzaCursos' ) ) {
-		class FuerzaCursos {
+		final class FuerzaCursos {
 
-			private static FuerzaCursos $instance;
+			private static $instance;
 
-			private $course;
+			private CourseFuerza $course;
 
-			public static function getInstance(): FuerzaCursos {
+			public static function getInstance() {
 				if ( ! self::$instance ) {
 					self::$instance = new self;
 				}
@@ -32,10 +32,9 @@
 				flush_rewrite_rules();
 			}
 
-
 		}
 
-		register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
-		register_activation_hook( __FILE__, 'FuerzaCursos::activation' );
+		register_deactivation_hook( WC_PLUGIN_FILE, 'flush_rewrite_rules' );
+		register_activation_hook( WC_PLUGIN_FILE, 'FuerzaCursos::activation' );
 
 	}

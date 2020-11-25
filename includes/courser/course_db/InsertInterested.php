@@ -90,8 +90,7 @@
 
 				if ( $result ) {
 					$json['field']   = 'email';
-					$json['message'] = "Este mail já existe em nossa base de dados,
-					                    por favor tente com um novo email";
+					$json['message'] = "Este mail já existe em nossa base de dados, por favor tente com um novo email";
 
 					wp_send_json_error( $json );
 				}

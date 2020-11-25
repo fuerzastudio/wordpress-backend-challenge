@@ -79,38 +79,6 @@ if(!class_exists('Fuerza_add_custom_box')){
 
 			?>
 
-			<style>
-                .fuerza-items {
-                    width: 100%;
-                    margin: 30px auto;
-                    display: flex;
-                    align-items: center;
-                    gap: 20px;
-                    flex-wrap: wrap;
-                }
-
-                .fuerza-box-item {
-                    min-width: 150px;
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
-                    gap: 20px;
-                }
-
-                .fuerza-item-url {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 10px
-                }
-
-                .fuerza-box-item-link {
-                    flex: 1;
-                }
-
-                .fuerza-item-url input {
-                    height: 50px;
-                    padding: 10px 20px;
-                }
-			</style>
 			<div class="fuerza-items">
 				<div class="fuerza-box-item">
 					<div class="fuerza-item-url">
@@ -136,36 +104,11 @@ if(!class_exists('Fuerza_add_custom_box')){
 		 * @param $post
 		 */
 		public static function findAll($post){
-			global $wpdb;
 
-			$response = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fuerza_courser
-                                            where id = '{$post->ID}'",OBJECT );
+			$response = Interesting::findAll( $post->ID);
 
 			if($response){
 				?>
-				<style>
-                    #fuerza-report {
-                        width: 100%;
-                        border: 1.5px solid #333;
-                        margin: 0 auto 10px;
-                        padding: 0;
-                    }
-
-                    #fuerza-report .title,
-                    #fuerza-report tr,
-                    #fuerza-report td {
-                        height: 30px;
-                        font-size: 15px;
-                        border-top: 1px solid #333;
-                        border-bottom: 1px solid #333;
-                    }
-
-                    .fuerza-not-found{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-				</style>
 
 				<table id="fuerza-report" class="cell-border stripe" style="width:100%">
 					<thead>
@@ -210,6 +153,7 @@ if(!class_exists('Fuerza_add_custom_box')){
 			}else{
 
 				echo '<div class="fuerza-not-found">';
+				echo $post->ID;
 				echo '<h3> Não há nenhum interessado neste curso ainda</h3>';
 				echo '</div>';
 			}

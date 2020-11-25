@@ -14,8 +14,9 @@
 			validateEmail( $postData['email'] );
 
 			$class = $postData['action'];
-			$data = $postData;
+			unset( $postData['action'] );
 
+			$data = $postData;
 			unset( $postData );
 
 			new $class( $data );
@@ -34,7 +35,7 @@
 			if ( ! filter_var( $email, FILTER_VALIDATE_EMAIL ) && ! is_email( $email ) ) {
 
 				$json['field']   = 'email';
-				$json['message'] = "Por favor digite um email valido";
+				$json['message'] = "Por favor digite um email valido.";
 
 				wp_send_json_error( $json );
 			}
@@ -50,7 +51,7 @@
 				if ( empty( $item ) ) {
 
 					$json['field']   = $key;
-					$json['message'] = "Este campo está em branco, você precisa preencher para continuar";
+					$json['message'] = "Este campo está em branco, você precisa preencher para continuar.";
 
 					wp_send_json_error( $json );
 				}

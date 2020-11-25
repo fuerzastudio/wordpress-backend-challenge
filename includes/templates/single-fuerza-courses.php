@@ -17,113 +17,6 @@
 	$link = $data->_fuerza_link;
 	?>
 
-	<style>
-        .fuerza-container {
-            width: 80%;
-            margin: 40px auto;
-        }
-
-        .fuerza-container .fuerza-main-content .fuerza-header {
-            margin: 100px 0;
-        }
-
-        .fuerza-container .fuerza-main-content header.fuerza-header h2 {
-            font-size: 44px !important;
-            color: red;
-        }
-
-        .fuerza-container .fuerza-main-content h3.header-excerpt p {
-            font-size: 28px !important;
-            color: red;
-        }
-
-        .fuerza-container .box-form-fuerza h3 {
-            text-align: center;
-            font-size: 30px !important;
-            text-transform: uppercase;
-            color: red;
-        }
-
-        .box-form-fuerza {
-            max-width: 600px;
-            margin: 100px auto;
-
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        .box-form-fuerza .form-group-fuerza+.form-group-fuerza {
-            margin-top: 30px;
-        }
-
-        .box-form-fuerza small {
-            margin-top: 10px;
-            padding: 5px;
-            color: red;
-        }
-
-        .box-form-fuerza-button {
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .box-form-fuerza-button button {
-            width: 200px;
-            margin-top: 40px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        input[type="hidden"] {
-            display: none;
-        }
-
-        .d-none {
-            display: none
-        }
-
-        .d-flex {
-            display:
-        }
-
-        .d-error {
-            border: 1px solid;
-            border-color: red !important;
-        }
-
-        .pt-4 {
-            margin-top: 20px !important;
-        }
-
-        a.button_link {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background: #cd2653;
-            border: none;
-            border-radius: 0;
-            color: #fff;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 0.0333em;
-            line-height: 1.25;
-            opacity: 1;
-            padding: 1.1em 1.44em;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: opacity 0.15s linear;
-            width: 100%;
-            max-width: 300px;
-
-            margin: 30px auto;
-        }
-	</style>
 	<div class="fuerza-container">
 
 		<header class="header-fuerza">
@@ -183,7 +76,11 @@
 
 						<div class="form-group-fuerza box-form-fuerza-button">
 
-							<button type="submit" class="j-fuerza" data-action="haveInterested"> enviar</button>
+							<button type="submit" class="j-fuerza" data-action="haveInterested">
+                                <span class="j-fuerza-title">Enviar</span>
+                                <i id="j-fuerza-land" class="fa fa-spinner fa-pulse fa-fw d-none"></i>
+                            </button>
+
 
 						</div>
 

@@ -4,7 +4,7 @@
 		/**
 		 * Class FuerzaScripts
 		 */
-		class FuerzaScripts {
+		final class FuerzaScripts {
 
 			/**
 			 * FuerzaScripts constructor.
@@ -22,8 +22,8 @@
 			 */
 			public function add_scripts_fuerza() {
 
-				$css_folder = plugins_url(). '/fuerza-course/assets/css';
-				$js_folder  = plugins_url(). '/fuerza-course/assets/js' ;
+				$css_folder = plugins_url(). '/fuerza-course/assets/public/css';
+				$js_folder  = plugins_url(). '/fuerza-course/assets/public/js' ;
 
 				wp_enqueue_style( 'font-icons', $css_folder . '/all.min.css', "", '1.0.1' );
 				wp_enqueue_style( 'fuerza-courses', $css_folder . '/fuerza.css', "", '1.0.1' );
@@ -44,7 +44,7 @@
 			 *
 			 */
 			public function add_scripts_admin(  ) {
-				$css_folder =  plugins_url() . '/fuerza-course/assets/css';
+				$css_folder =  plugins_url() . '/fuerza-course/assets/admin/css';
 
 				wp_enqueue_style('font-icons', $css_folder . '/report.css', "",'1.0.1');
 			}
