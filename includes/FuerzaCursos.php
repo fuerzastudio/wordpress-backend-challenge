@@ -5,7 +5,8 @@
 
 			private static $instance;
 
-			private CourseFuerza $course;
+			protected static CourseFuerza $course;
+
 
 			public static function getInstance() {
 				if ( ! self::$instance ) {
@@ -17,7 +18,7 @@
 
 			private function __construct() {
 
-				$this->course =  new CourseFuerza();
+				self::$course =  new CourseFuerza();
 
 				new FuerzaTemplate();
 
@@ -27,8 +28,8 @@
 
 			}
 
-			public function activation() {
-				$this->course->fuerza_register_post_type();
+			public static function activation() {
+				self::$course->fuerza_register_post_type();
 				flush_rewrite_rules();
 			}
 
