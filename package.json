@@ -1,0 +1,18 @@
+{
+ "name": "fuerza-course",
+ "version": "1.0.0",
+ "main": "index.js",
+ "repository": "https://github.com/maycon-queiroz/wordpress-backend-challenge.git",
+ "author": "Maycon Queiroz <fmaycon@gmail.com>",
+ "license": "MIT",
+ "scripts": {
+  "commit": "git-cz"
+ },
+ "devDependencies": {
+  "@commitlint/cli": "^11.0.0",
+  "@commitlint/config-conventional": "^11.0.0",
+  "commitizen": "^4.2.2",
+  "cz-conventional-changelog": "3.3.0"
+ }
+
+}

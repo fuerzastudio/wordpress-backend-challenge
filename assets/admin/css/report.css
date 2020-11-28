@@ -1,0 +1,237 @@
+#wpfooter {
+    display: none;
+}
+
+.wrap-fuerza {
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: #fbfbfb;
+}
+
+.wrap-fuerza .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.wrap-fuerza .title-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.wrap-fuerza .title-column h1,
+.wrap-fuerza .title-column h2 {
+    margin: 10px auto;
+}
+
+.list-all #fuerza-report form,
+.list-all #fuerza-report #fuerza-report_wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list-all #fuerza-report table {
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 0 auto 10px;
+    padding: 0;
+}
+
+.list-all #fuerza-report table,
+.list-all #fuerza-report table tbody {
+    transition: 0.5s;
+}
+
+.list-all #fuerza-report .dataTables_length,
+.list-all #fuerza-report .dataTables_filter {
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    display: flex;
+}
+
+.list-all #fuerza-report tr > th {
+    font-size: 16px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.list-all #fuerza-report .box-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0 20px;
+    height: 40px;
+}
+
+.wrap-fuerza .box-form > select {
+    padding: 5px 20px;
+    height: 40px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.wrap-fuerza .btn {
+    border-radius: 2px;
+    padding: 10px 30px;
+    border: 1px solid rgb(119, 176, 139);
+    display: block;
+    cursor: pointer;
+    color: #555555;
+    font-size: 16px;
+    font-weight: bold;
+    height: 100%;
+    max-height: 40px;
+}
+
+.dataTables_wrapper .dataTables_filter .btn {
+    max-height: 30px;
+    padding: 5px 12px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.wrap-fuerza .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.wrap-fuerza .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.wrap-fuerza .btn:hover {
+    background: rgb(117, 176, 138) !important;
+    color: #ffffff !important;
+    border: 0;
+}
+
+.wrap-fuerza img {
+    margin: 0 auto 10px;
+    width: 60%;
+    text-align: center;
+    display: block;
+}
+
+
+.wrap-fuerza tfoot tr th {
+    font-size: 12px;
+}
+
+.center {
+    text-align: center;
+}
+
+[data-id] {
+    cursor: pointer;
+}
+
+.put-table {
+    display: none;
+}
+
+.fuerza-item-pagination {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fuerza-item-pagination label {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.fuerza-item-pagination select,
+.fuerza-item-pagination input {
+    margin-top: 10px;
+}
+
+.fuerza-field-try {
+    margin: 0.5em 0;
+}
+
+td.sinc.column-sinc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 5px;
+    transition: 0.4s;
+}
+
+div.fuerza-bottons {
+    flex-direction: row;
+}
+
+span.fuerza-load {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-self: start;
+    width: 15px;
+    height: 15px;
+}
+
+span.fuerza-none {
+    display: none;
+}
+
+.fuerza-items {
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.fuerza-box-item {
+    min-width: 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+    gap: 20px;
+}
+
+.fuerza-item-url {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px
+}
+
+.fuerza-box-item-link {
+    flex: 1;
+}
+
+.fuerza-item-url input {
+    height: 50px;
+    padding: 10px 20px;
+}
+
+span.fuerza-info {
+    background-color: #c62d2d;
+    color: #fff0ef;
+    display: block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    width: auto;
+}
+
+#fuerza-report {
+    width: 100%;
+    border: 1.5px solid #333;
+    margin: 0 auto 10px;
+    padding: 0;
+}
+
+#fuerza-report .title,
+#fuerza-report tr,
+#fuerza-report td {
+    height: 30px;
+    font-size: 15px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.fuerza-not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
